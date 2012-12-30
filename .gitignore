@@ -1,0 +1,4 @@
+bin/*
+testsBin/*
+TEST.*
+TEST_CACHE.*
