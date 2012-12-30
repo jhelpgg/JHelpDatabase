@@ -6,9 +6,19 @@ import jhelp.util.math.UtilMath;
 import org.junit.Assert;
 import org.junit.Test;
 
+/**
+ * Test of cache based on database
+ * 
+ * @author JHelp
+ */
 public class DatabaseCacheTest
 {
-
+   /**
+    * Do a simple test about type and value
+    * 
+    * @throws DatabaseException
+    *            On database creation/request issue
+    */
    @Test
    public void test() throws DatabaseException
    {
