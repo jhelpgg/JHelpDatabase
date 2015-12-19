@@ -1,3 +1,13 @@
+/**
+ * <h1>License :</h1> <br>
+ * The following code is deliver as is. I take care that code compile and work, but I am not responsible about any damage it may
+ * cause.<br>
+ * You can use, modify, the code as your need for any usage. But you can't do any action that avoid me or other person use,
+ * modify this code. The code is free for usage and modification, you can't change that fact.<br>
+ * <br>
+ * 
+ * @author JHelp
+ */
 package jhelp.database.cache;
 
 import jhelp.database.ConditionColumnEquals;
@@ -161,8 +171,9 @@ public class DatabaseCache
     */
    private void addValue(final ValueCache value) throws DatabaseException
    {
-      this.database.insert(DatabaseCache.TABLE_CACHE, new Value(DatabaseCache.TABLE_CACHE_COLUM_NAME, Data.createLongStringData(value.key)),
-            new Value(DatabaseCache.TABLE_CACHE_COLUM_TYPE, Data.createLongStringData(value.type.name())), new Value(DatabaseCache.TABLE_CACHE_COLUM_VALUE, Data.createLongStringData(value.value)));
+      this.database.insert(DatabaseCache.TABLE_CACHE, new Value(DatabaseCache.TABLE_CACHE_COLUM_NAME, Data.createLongStringData(value.key)), new Value(
+            DatabaseCache.TABLE_CACHE_COLUM_TYPE, Data.createLongStringData(value.type.name())),
+            new Value(DatabaseCache.TABLE_CACHE_COLUM_VALUE, Data.createLongStringData(value.value)));
    }
 
    /**

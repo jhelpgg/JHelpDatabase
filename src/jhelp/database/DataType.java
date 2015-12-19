@@ -1,9 +1,12 @@
 /**
- * Project : JHelpDataBase<br>
- * Package : jhelp.database<br>
- * Class : DatabaseType<br>
- * Date : 16 avr. 2009<br>
- * By JHelp
+ * <h1>License :</h1> <br>
+ * The following code is deliver as is. I take care that code compile and work, but I am not responsible about any damage it may
+ * cause.<br>
+ * You can use, modify, the code as your need for any usage. But you can't do any action that avoid me or other person use,
+ * modify this code. The code is free for usage and modification, you can't change that fact.<br>
+ * <br>
+ * 
+ * @author JHelp
  */
 package jhelp.database;
 
@@ -17,32 +20,32 @@ package jhelp.database;
  */
 public enum DataType
 {
-   /** int */
-   INT,
-   /** double */
-   DOUBLE,
-   /** String (128) */
-   VARCHAR,
-   /** String "infinite" */
-   LONGVARCHAR,
-   /** java.sql.Date */
-   DATE,
-   /** java.sql.Time */
-   TIME,
-   /** java.sql.Timestamp */
-   TIMESTAMP,
-   /** java.math.BigDecimal */
-   DECIMAL,
-   /** boolean */
-   BOOLEAN,
-   /** byte */
-   TINYINT,
-   /** short */
-   SMALLINT,
    /** long */
    BIGINT,
    /** byte[] **/
    BINARY,
+   /** boolean */
+   BOOLEAN,
+   /** java.sql.Date */
+   DATE,
+   /** java.math.BigDecimal */
+   DECIMAL,
+   /** double */
+   DOUBLE,
+   /** int */
+   INT,
+   /** String "infinite" */
+   LONGVARCHAR,
    /** Object */
-   OBJECT
+   OBJECT,
+   /** short */
+   SMALLINT,
+   /** java.sql.Time */
+   TIME,
+   /** java.sql.Timestamp */
+   TIMESTAMP,
+   /** byte */
+   TINYINT,
+   /** String (128) */
+   VARCHAR
 }

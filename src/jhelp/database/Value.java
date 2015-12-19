@@ -1,9 +1,12 @@
 /**
- * Project : JHelpDataBase<br>
- * Package : jhelp.database<br>
- * Class : Value<br>
- * Date : 16 avr. 2009<br>
- * By JHelp
+ * <h1>License :</h1> <br>
+ * The following code is deliver as is. I take care that code compile and work, but I am not responsible about any damage it may
+ * cause.<br>
+ * You can use, modify, the code as your need for any usage. But you can't do any action that avoid me or other person use,
+ * modify this code. The code is free for usage and modification, you can't change that fact.<br>
+ * <br>
+ * 
+ * @author JHelp
  */
 package jhelp.database;
 
@@ -18,10 +21,10 @@ package jhelp.database;
  */
 public class Value
 {
-   /** Column name */
-   private String name;
    /** Data */
-   private Data   data;
+   private final Data   data;
+   /** Column name */
+   private final String name;
 
    /**
     * Constructs Value
@@ -31,7 +34,7 @@ public class Value
     * @param data
     *           Data
     */
-   public Value(String name, Data data)
+   public Value(final String name, final Data data)
    {
       if(name == null)
       {
@@ -46,16 +49,6 @@ public class Value
    }
 
    /**
-    * Return name
-    * 
-    * @return name
-    */
-   public String getName()
-   {
-      return this.name;
-   }
-
-   /**
     * Return data
     * 
     * @return data
@@ -63,5 +56,15 @@ public class Value
    public Data getData()
    {
       return this.data;
+   }
+
+   /**
+    * Return name
+    * 
+    * @return name
+    */
+   public String getName()
+   {
+      return this.name;
    }
 }

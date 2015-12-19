@@ -1,9 +1,12 @@
 /**
- * Project : JHelpDataBase<br>
- * Package : jhelp.database.file<br>
- * Class : FileDatabase<br>
- * Date : 17 avr. 2009<br>
- * By JHelp
+ * <h1>License :</h1> <br>
+ * The following code is deliver as is. I take care that code compile and work, but I am not responsible about any damage it may
+ * cause.<br>
+ * You can use, modify, the code as your need for any usage. But you can't do any action that avoid me or other person use,
+ * modify this code. The code is free for usage and modification, you can't change that fact.<br>
+ * <br>
+ * 
+ * @author JHelp
  */
 package jhelp.database.file;
 
@@ -12,9 +15,9 @@ import java.io.IOException;
 import java.util.Stack;
 
 import jhelp.database.ColumnDescription;
-import jhelp.database.ConditionColumnEquals;
 import jhelp.database.Condition;
 import jhelp.database.ConditionAND;
+import jhelp.database.ConditionColumnEquals;
 import jhelp.database.ConditionIN;
 import jhelp.database.ConditionNOT;
 import jhelp.database.Data;
@@ -322,7 +325,8 @@ public class FileDatabase
 
       // Prepare query to select COLUMN_ID in ASSOCIATIONS table
       SelectQuery selectQuery = new SelectQuery(FileDatabase.ASSOCIATIONS, FileDatabase.COLUMN_ID);
-      selectQuery.setWhere(new ConditionAND(new ConditionColumnEquals(FileDatabase.COLUMN_FILE_ID.getColumnName(), dataFileID), new ConditionColumnEquals(FileDatabase.COLUMN_WORD_ID.getColumnName(), dataWordID)));
+      selectQuery.setWhere(new ConditionAND(new ConditionColumnEquals(FileDatabase.COLUMN_FILE_ID.getColumnName(), dataFileID), new ConditionColumnEquals(
+            FileDatabase.COLUMN_WORD_ID.getColumnName(), dataWordID)));
 
       // For each word
       for(final String word : words)
@@ -338,7 +342,8 @@ public class FileDatabase
          if(this.database.query(selectQuery).numberOfRows() == 0)
          {
             // Add the association
-            this.database.insert(FileDatabase.ASSOCIATIONS, new Value(FileDatabase.COLUMN_FILE_ID.getColumnName(), dataFileID), new Value(FileDatabase.COLUMN_WORD_ID.getColumnName(), dataWordID));
+            this.database.insert(FileDatabase.ASSOCIATIONS, new Value(FileDatabase.COLUMN_FILE_ID.getColumnName(), dataFileID), new Value(
+                  FileDatabase.COLUMN_WORD_ID.getColumnName(), dataWordID));
          }
       }
 
@@ -477,7 +482,8 @@ public class FileDatabase
       }
 
       final SelectQuery selectQueryFileID = new SelectQuery(FileDatabase.FILES, FileDatabase.COLUMN_ID);
-      selectQueryFileID.setWhere(new ConditionColumnEquals(FileDatabase.COLUMN_PATH.getColumnName(), Data.createLongStringData(file.getAbsolutePath().replace('\'', (char) 128))));
+      selectQueryFileID.setWhere(new ConditionColumnEquals(FileDatabase.COLUMN_PATH.getColumnName(), Data.createLongStringData(file.getAbsolutePath().replace(
+            '\'', (char) 128))));
 
       final SelectQuery selectQueryWordsAssociate = new SelectQuery(FileDatabase.ASSOCIATIONS, FileDatabase.COLUMN_WORD_ID);
       selectQueryWordsAssociate.setWhere(new ConditionIN(FileDatabase.COLUMN_FILE_ID.getColumnName(), selectQueryFileID));
@@ -524,7 +530,7 @@ public class FileDatabase
       SelectQuery selectQueryFilePath = new SelectQuery(FileDatabase.FILES, FileDatabase.COLUMN_PATH);
 
       // If filters are specified
-      if(filters != null && filters.length > 0)
+      if((filters != null) && (filters.length > 0))
       {
          // Collected ids
          ArrayInt ids = new ArrayInt();
