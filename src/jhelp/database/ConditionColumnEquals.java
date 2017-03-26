@@ -55,7 +55,7 @@ public class ConditionColumnEquals
    @Override
    protected String toString(final Database database)
    {
-      final StringBuffer stringBuffer = new StringBuffer(this.columnName);
+      final StringBuilder stringBuffer = new StringBuilder(this.columnName);
 
       if(this.value == null)
       {
@@ -79,7 +79,7 @@ public class ConditionColumnEquals
    @Override
    public String toString()
    {
-      final StringBuffer stringBuffer = new StringBuffer(this.columnName);
+      final StringBuilder stringBuffer = new StringBuilder(this.columnName);
 
       if(this.value == null)
       {

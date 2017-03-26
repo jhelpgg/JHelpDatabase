@@ -81,7 +81,7 @@ public class SelectQuery
     */
    String toString(final Database database)
    {
-      final StringBuffer stringBuffer = new StringBuffer("SELECT ");
+      final StringBuilder stringBuffer = new StringBuilder("SELECT ");
 
       stringBuffer.append(this.columns[0].getColumnName());
       for(int i = 1; i < this.columns.length; i++)
@@ -135,7 +135,7 @@ public class SelectQuery
    @Override
    public String toString()
    {
-      final StringBuffer stringBuffer = new StringBuffer("SELECT ");
+      final StringBuilder stringBuffer = new StringBuilder("SELECT ");
 
       stringBuffer.append(this.columns[0].getColumnName());
       for(int i = 1; i < this.columns.length; i++)

@@ -88,7 +88,8 @@ public class QueryResult
    {
       for(int i = 0; i < this.columns.length; i++)
       {
-         if(this.columns[i].getColumnName().equals(columnName) == true)
+         if(this.columns[i].getColumnName()
+                           .equals(columnName))
          {
             return i;
          }

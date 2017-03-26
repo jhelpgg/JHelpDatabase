@@ -47,7 +47,7 @@ class ConditionFileAssociation
    @Override
    public String toString()
    {
-      final StringBuffer condition = new StringBuffer();
+      final StringBuilder condition = new StringBuilder();
 
       final int length = this.filesID.length;
 
@@ -89,7 +89,7 @@ class ConditionFileAssociation
    @Override
    public String toString(final Database database)
    {
-      final StringBuffer condition = new StringBuffer();
+      final StringBuilder condition = new StringBuilder();
 
       final int length = this.filesID.length;
 

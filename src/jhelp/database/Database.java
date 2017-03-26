@@ -154,7 +154,8 @@ public class Database
             final QueryResult queryResult = this.query(selectQuery);
 
             // Check if given password match
-            if(password.equals(queryResult.getData(0, 0).getLongString()) == false)
+            if(!password.equals(queryResult.getData(0, 0)
+                                           .getLongString()))
             {
                // Random sleep against the "time attack"
                Utilities.sleep((int) ((Math.random() * 123) + 12));
@@ -177,7 +178,7 @@ public class Database
          this.createTable(Database.METADATA_TABLE, Database.COLUMN_TABLE_NAME);
          this.createTable(Database.METADATA_COLUMN, Database.COLUMN_TABLE_ID, Database.COLUMN_COLUMN_NAME, Database.COLUMN_COLUMN_TYPE);
       }
-      catch(final Exception exception)
+      catch(final Exception ignored)
       {
       }
 
@@ -371,7 +372,7 @@ public class Database
     */
    public void createTable(final String tableName, final ColumnDescription... columnDescriptions) throws DatabaseException
    {
-      if(this.metedataReady == true)
+      if(this.metedataReady)
       {
          final Data tableNameData = new Data(tableName.toUpperCase());
 
@@ -468,7 +469,7 @@ public class Database
       {
          columns[i] = tableInfo.getColumn(i);
 
-         if(columns[i].equals(Database.COLUMN_ID) == true)
+         if(columns[i].equals(Database.COLUMN_ID))
          {
             index = i;
          }
@@ -575,7 +576,7 @@ public class Database
     */
    public int insert(final String table, final Value... values) throws DatabaseException
    {
-      final StringBuffer insert = new StringBuffer("INSERT INTO ");
+      final StringBuilder insert = new StringBuilder("INSERT INTO ");
       insert.append(table);
       insert.append(" ( ");
       insert.append(values[0].getName());
@@ -722,7 +723,7 @@ public class Database
             queryString.append(" ORDER BY ");
             queryString.append(columnSort);
 
-            if(isAscendent == true)
+            if(isAscendent)
             {
                queryString.append(" ASC");
             }
@@ -740,7 +741,7 @@ public class Database
          final int colums = queryResult.numberOfColumns();
          Data[] datas;
 
-         while(resultSet.next() == true)
+         while(resultSet.next())
          {
             datas = new Data[colums];
             for(int i = 0; i < colums; i++)

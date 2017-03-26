@@ -65,7 +65,7 @@ public class UpdateQuery
     */
    String toString(final Database database)
    {
-      final StringBuffer stringBuffer = new StringBuffer("UPDATE ");
+      final StringBuilder stringBuffer = new StringBuilder("UPDATE ");
       stringBuffer.append(this.table);
       stringBuffer.append(" SET ");
       stringBuffer.append(this.values[0].getName());
@@ -119,7 +119,7 @@ public class UpdateQuery
    @Override
    public String toString()
    {
-      final StringBuffer stringBuffer = new StringBuffer("UPDATE ");
+      final StringBuilder stringBuffer = new StringBuilder("UPDATE ");
       stringBuffer.append(this.table);
       stringBuffer.append(" SET ");
       stringBuffer.append(this.values[0].getName());

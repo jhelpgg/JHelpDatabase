@@ -76,29 +76,11 @@ public class ColumnDescription
          return false;
       }
       final ColumnDescription other = (ColumnDescription) obj;
-      if(this.columnName == null)
-      {
-         if(other.columnName != null)
-         {
-            return false;
-         }
-      }
-      else if(!this.columnName.equalsIgnoreCase(other.columnName))
+      if(!this.columnName.equalsIgnoreCase(other.columnName))
       {
          return false;
       }
-      if(this.dataType == null)
-      {
-         if(other.dataType != null)
-         {
-            return false;
-         }
-      }
-      else if(!this.dataType.equals(other.dataType))
-      {
-         return false;
-      }
-      return true;
+       return this.dataType.equals(other.dataType);
    }
 
    /**

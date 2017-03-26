@@ -37,11 +37,11 @@ public class DatabaseCache
    private static class ValueCache
    {
       /** Element key */
-      public String key;
+      public final String key;
       /** Element type */
-      public Type   type;
+      public final Type   type;
       /** Element value */
-      public String value;
+      public       String value;
 
       /**
        * Create a new instance of ValueCache

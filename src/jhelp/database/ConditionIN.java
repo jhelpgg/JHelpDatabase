@@ -97,7 +97,7 @@ public class ConditionIN
    @Override
    public String toString()
    {
-      final StringBuffer stringBuffer = new StringBuffer(this.columnName);
+      final StringBuilder stringBuffer = new StringBuilder(this.columnName);
 
       if(this.selectQuery != null)
       {
@@ -131,7 +131,7 @@ public class ConditionIN
    @Override
    public String toString(final Database database)
    {
-      final StringBuffer stringBuffer = new StringBuffer(this.columnName);
+      final StringBuilder stringBuffer = new StringBuilder(this.columnName);
 
       if(this.selectQuery != null)
       {

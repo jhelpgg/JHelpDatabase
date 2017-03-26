@@ -142,7 +142,7 @@ public class TableInfo
     */
    public boolean equals(final TableInfo tableInfo)
    {
-      if(this.name.equalsIgnoreCase(tableInfo.name) == false)
+      if(!this.name.equalsIgnoreCase(tableInfo.name))
       {
          return false;
       }

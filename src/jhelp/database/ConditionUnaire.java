@@ -59,7 +59,7 @@ public abstract class ConditionUnaire
    @Override
    protected String toString(final Database database)
    {
-      final StringBuffer stringBuffer = new StringBuffer(this.conditionName);
+      final StringBuilder stringBuffer = new StringBuilder(this.conditionName);
       stringBuffer.append('(');
       stringBuffer.append(this.condition.toString(database));
       stringBuffer.append(')');
@@ -76,7 +76,7 @@ public abstract class ConditionUnaire
    @Override
    public String toString()
    {
-      final StringBuffer stringBuffer = new StringBuffer(this.conditionName);
+      final StringBuilder stringBuffer = new StringBuilder(this.conditionName);
       stringBuffer.append('(');
       stringBuffer.append(this.condition.toString());
       stringBuffer.append(')');

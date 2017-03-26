@@ -78,7 +78,7 @@ public class FileDatabase
          {
             for(final File child : children)
             {
-               if(child.exists() == true)
+               if(child.exists())
                {
                   stack.push(child);
                }
@@ -86,14 +86,14 @@ public class FileDatabase
          }
 
          File file;
-         while(stack.isEmpty() == false)
+         while(!stack.isEmpty())
          {
             file = stack.pop();
             Debug.println(DebugLevel.VERBOSE, file.getAbsolutePath(), file.isDirectory()
                   ? " *"
                   : "");
 
-            if(file.isDirectory() == true)
+            if(file.isDirectory())
             {
                children = file.listFiles();
                if(children != null)
@@ -209,7 +209,7 @@ public class FileDatabase
       {
          throw new NullPointerException("file musn't be null");
       }
-      if(file.exists() == false)
+      if(!file.exists())
       {
          throw new IllegalArgumentException(UtilText.concatenate("file ", file.getAbsolutePath(), " not exists !"));
       }
@@ -756,7 +756,7 @@ public class FileDatabase
       queryResult.destroy();
 
       // If old file exists in hard drive, rename it physically
-      if(oldFile.exists() == true)
+      if(oldFile.exists())
       {
          try
          {

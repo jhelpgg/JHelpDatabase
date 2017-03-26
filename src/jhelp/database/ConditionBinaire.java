@@ -69,7 +69,7 @@ public abstract class ConditionBinaire
    @Override
    protected String toString(final Database database)
    {
-      final StringBuffer stringBuffer = new StringBuffer();
+      final StringBuilder stringBuffer = new StringBuilder();
       stringBuffer.append('(');
       stringBuffer.append(this.condition1.toString(database));
       stringBuffer.append(") ");
@@ -90,7 +90,7 @@ public abstract class ConditionBinaire
    @Override
    public String toString()
    {
-      final StringBuffer stringBuffer = new StringBuffer();
+      final StringBuilder stringBuffer = new StringBuilder();
       stringBuffer.append('(');
       stringBuffer.append(this.condition1.toString());
       stringBuffer.append(") ");

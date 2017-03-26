@@ -85,7 +85,7 @@ public class Data
     */
    public Data(final boolean value)
    {
-      this.value = new Boolean(value);
+      this.value = Boolean.valueOf(value);
       this.dataType = DataType.BOOLEAN;
    }
 
@@ -486,7 +486,7 @@ public class Data
    public void set(final boolean value)
    {
       this.checkType(DataType.BOOLEAN);
-      this.value = new Boolean(value);
+      this.value = Boolean.valueOf(value);
    }
 
    /**
